@@ -1,6 +1,7 @@
 ﻿Option Explicit On
 
 Imports System.IO
+Imports Microsoft.Office.Core
 Imports Microsoft.Office.Interop.PowerPoint
 Imports Scripting
 
@@ -128,14 +129,15 @@ Public Class MyFunctions
             Dim pptApp As Application
             Dim destPPT As Presentation
             Dim srcPPT As Presentation
+
             pptApp = GetObject([Class]:="PowerPoint.Application")
-            'pptApp = New PowerPoint.Application
+
             destPPT = pptApp.ActivePresentation
-            srcPPT = pptApp.Presentations.Open(srcPath)
+            srcPPT = pptApp.Presentations.Open(srcPath, MsoTriState.msoTrue,, MsoTriState.msoFalse)
 
             'copy Slides
             srcPPT.Slides.Range().Copy()
-            destPPT.Windows.Item(1).Activate()
+            'destPPT.Windows.Item(1).Activate()
             destPPT.Application.CommandBars.ExecuteMso("PasteSourceFormatting")
 
             'close opened PPT
