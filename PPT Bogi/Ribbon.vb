@@ -18,7 +18,7 @@ Public Class Ribbon
 
     End Sub
 
-    Private Sub GroupLieder_DialogLauncherClick(ByVal sender As Object, ByVal e As RibbonControlEventArgs) Handles GroupLieder.DialogLauncherClick
+    Private Sub GroupLieder_DialogLauncherClick(ByVal sender As Object, ByVal e As RibbonControlEventArgs) Handles GroupSongs.DialogLauncherClick
 
         Dim helpInfo As String
 
@@ -51,4 +51,35 @@ Public Class Ribbon
 
     End Sub
 
+    Private Sub ButtonOpenDirectory_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonOpenDirectory.Click
+
+    End Sub
+
+    Private Sub CheckBoxAnnounce_Click(sender As Object, e As RibbonControlEventArgs) Handles CheckBoxAnnounce.Click
+
+    End Sub
+
+    Private Sub ButtonInsertMap_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonInsertMap.Click
+
+    End Sub
+
+    Private Sub ButtonLocations_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonLocations.Click
+
+    End Sub
+
+    Private Sub ButtonInsertEGW_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonInsertEGW.Click
+
+    End Sub
+
+    Private Sub ButtonInsertClosing_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonInsertClosing.Click
+
+    End Sub
+
+    Private Sub ButtonInsertVideo_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonInsertVideo.Click
+
+    End Sub
+
+    Private Sub ButtonSetBackground_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonSetBackground.Click
+
+    End Sub
 End Class
