@@ -44,17 +44,17 @@
         Dim RibbonDialogLauncherImpl1 As Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher = Me.Factory.CreateRibbonDialogLauncher
         Me.TabBogi = Me.Factory.CreateRibbonTab
         Me.GroupSongs = Me.Factory.CreateRibbonGroup
+        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
+        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonInsertSong = Me.Factory.CreateRibbonButton
         Me.ButtonOpenDirectory = Me.Factory.CreateRibbonButton
         Me.ButtonChangeDirectory = Me.Factory.CreateRibbonButton
-        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
-        Me.GroupSlides = Me.Factory.CreateRibbonGroup
+        Me.ButtonSetBackground = Me.Factory.CreateRibbonButton
         Me.ButtonInsertMap = Me.Factory.CreateRibbonButton
         Me.ButtonLocations = Me.Factory.CreateRibbonButton
         Me.ButtonInsertEGW = Me.Factory.CreateRibbonButton
         Me.ButtonInsertClosing = Me.Factory.CreateRibbonButton
         Me.ButtonInsertVideo = Me.Factory.CreateRibbonButton
-        Me.ButtonSetBackground = Me.Factory.CreateRibbonButton
         Me.TabBogi.SuspendLayout()
         Me.GroupSongs.SuspendLayout()
         Me.GroupSlides.SuspendLayout()
@@ -80,32 +80,6 @@
         Me.GroupSongs.Label = "Lieder"
         Me.GroupSongs.Name = "GroupSongs"
         '
-        'ButtonInsertSong
-        '
-        Me.ButtonInsertSong.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.ButtonInsertSong.Image = Global.PPT_Bogi.My.Resources.Resources.Song
-        Me.ButtonInsertSong.Label = "Lied einfügen"
-        Me.ButtonInsertSong.Name = "ButtonInsertSong"
-        Me.ButtonInsertSong.ScreenTip = "Lied einfügen"
-        Me.ButtonInsertSong.ShowImage = True
-        Me.ButtonInsertSong.SuperTip = "Fügt ein Lied an der aktuellen Position ein."
-        '
-        'ButtonOpenDirectory
-        '
-        Me.ButtonOpenDirectory.Image = Global.PPT_Bogi.My.Resources.Resources.Folder
-        Me.ButtonOpenDirectory.Label = "Verzeichnis öffnen"
-        Me.ButtonOpenDirectory.Name = "ButtonOpenDirectory"
-        Me.ButtonOpenDirectory.ShowImage = True
-        '
-        'ButtonChangeDirectory
-        '
-        Me.ButtonChangeDirectory.Image = Global.PPT_Bogi.My.Resources.Resources.Folder
-        Me.ButtonChangeDirectory.Label = "Verzeichnis ändern"
-        Me.ButtonChangeDirectory.Name = "ButtonChangeDirectory"
-        Me.ButtonChangeDirectory.ScreenTip = "Verzeichnis ändern"
-        Me.ButtonChangeDirectory.ShowImage = True
-        Me.ButtonChangeDirectory.SuperTip = "Ändert das Verzeichnis, aus welchem die Lieder geöffnet werden sollen."
-        '
         'CheckBoxAnnounce
         '
         Me.CheckBoxAnnounce.Label = "Ankündigung"
@@ -121,6 +95,36 @@
         Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
         Me.GroupSlides.Label = "Folien"
         Me.GroupSlides.Name = "GroupSlides"
+        '
+        'ButtonInsertSong
+        '
+        Me.ButtonInsertSong.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.ButtonInsertSong.Image = Global.PPT_Bogi.My.Resources.Resources.Song
+        Me.ButtonInsertSong.Label = "Lied einfügen"
+        Me.ButtonInsertSong.Name = "ButtonInsertSong"
+        Me.ButtonInsertSong.ScreenTip = "Lied einfügen"
+        Me.ButtonInsertSong.ShowImage = True
+        Me.ButtonInsertSong.SuperTip = "Fügt ein Lied an der aktuellen Position ein."
+        '
+        'ButtonOpenDirectory
+        '
+        Me.ButtonOpenDirectory.Image = Global.PPT_Bogi.My.Resources.Resources.Folder
+        Me.ButtonOpenDirectory.Label = "Verzeichnis öffnen"
+        Me.ButtonOpenDirectory.Name = "ButtonOpenDirectory"
+        '
+        'ButtonChangeDirectory
+        '
+        Me.ButtonChangeDirectory.Image = Global.PPT_Bogi.My.Resources.Resources.Folder
+        Me.ButtonChangeDirectory.Label = "Verzeichnis ändern"
+        Me.ButtonChangeDirectory.Name = "ButtonChangeDirectory"
+        Me.ButtonChangeDirectory.ScreenTip = "Verzeichnis ändern"
+        Me.ButtonChangeDirectory.SuperTip = "Ändert das Verzeichnis, aus welchem die Lieder geöffnet werden sollen."
+        '
+        'ButtonSetBackground
+        '
+        Me.ButtonSetBackground.Label = "Hintergrund"
+        Me.ButtonSetBackground.Name = "ButtonSetBackground"
+        Me.ButtonSetBackground.ScreenTip = "Hintergrund"
         '
         'ButtonInsertMap
         '
@@ -148,12 +152,6 @@
         '
         Me.ButtonInsertVideo.Label = "Missionsvideo"
         Me.ButtonInsertVideo.Name = "ButtonInsertVideo"
-        '
-        'ButtonSetBackground
-        '
-        Me.ButtonSetBackground.Label = "Hintergrund"
-        Me.ButtonSetBackground.Name = "ButtonSetBackground"
-        Me.ButtonSetBackground.ScreenTip = "Hintergrund"
         '
         'Ribbon
         '
