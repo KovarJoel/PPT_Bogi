@@ -61,12 +61,52 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property EGW() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("EGW", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
         Friend ReadOnly Property Folder() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Folder", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Main() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Main", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Missionskarte() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Missionskarte", resourceCulture)
+                Return CType(obj,Byte())
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Byte[].
+        '''</summary>
+        Friend ReadOnly Property Sabbatschulgruppen() As Byte()
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Sabbatschulgruppen", resourceCulture)
+                Return CType(obj,Byte())
             End Get
         End Property
         
