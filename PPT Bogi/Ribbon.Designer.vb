@@ -47,14 +47,14 @@
         Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
         Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonInsertSong = Me.Factory.CreateRibbonButton
-        Me.ButtonOpenDirectory = Me.Factory.CreateRibbonButton
         Me.ButtonChangeDirectory = Me.Factory.CreateRibbonButton
         Me.ButtonSetBackground = Me.Factory.CreateRibbonButton
         Me.ButtonInsertMap = Me.Factory.CreateRibbonButton
-        Me.ButtonLocations = Me.Factory.CreateRibbonButton
+        Me.ButtonInsertLocations = Me.Factory.CreateRibbonButton
         Me.ButtonInsertEGW = Me.Factory.CreateRibbonButton
         Me.ButtonInsertClosing = Me.Factory.CreateRibbonButton
         Me.ButtonInsertVideo = Me.Factory.CreateRibbonButton
+        Me.ButtonInsertSongManually = Me.Factory.CreateRibbonButton
         Me.TabBogi.SuspendLayout()
         Me.GroupSongs.SuspendLayout()
         Me.GroupSlides.SuspendLayout()
@@ -74,8 +74,8 @@
         RibbonDialogLauncherImpl1.SuperTip = "Bei Problemen oder Fragen."
         Me.GroupSongs.DialogLauncher = RibbonDialogLauncherImpl1
         Me.GroupSongs.Items.Add(Me.ButtonInsertSong)
-        Me.GroupSongs.Items.Add(Me.ButtonOpenDirectory)
         Me.GroupSongs.Items.Add(Me.ButtonChangeDirectory)
+        Me.GroupSongs.Items.Add(Me.ButtonInsertSongManually)
         Me.GroupSongs.Items.Add(Me.CheckBoxAnnounce)
         Me.GroupSongs.Label = "Lieder"
         Me.GroupSongs.Name = "GroupSongs"
@@ -89,7 +89,7 @@
         '
         Me.GroupSlides.Items.Add(Me.ButtonSetBackground)
         Me.GroupSlides.Items.Add(Me.ButtonInsertMap)
-        Me.GroupSlides.Items.Add(Me.ButtonLocations)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertLocations)
         Me.GroupSlides.Items.Add(Me.ButtonInsertEGW)
         Me.GroupSlides.Items.Add(Me.ButtonInsertClosing)
         Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
@@ -105,12 +105,6 @@
         Me.ButtonInsertSong.ScreenTip = "Lied einfügen"
         Me.ButtonInsertSong.ShowImage = True
         Me.ButtonInsertSong.SuperTip = "Fügt ein Lied an der aktuellen Position ein."
-        '
-        'ButtonOpenDirectory
-        '
-        Me.ButtonOpenDirectory.Image = Global.PPT_Bogi.My.Resources.Resources.Folder
-        Me.ButtonOpenDirectory.Label = "Verzeichnis öffnen"
-        Me.ButtonOpenDirectory.Name = "ButtonOpenDirectory"
         '
         'ButtonChangeDirectory
         '
@@ -133,10 +127,10 @@
         Me.ButtonInsertMap.ScreenTip = "Missionskarte"
         Me.ButtonInsertMap.SuperTip = "Fügt die Karte vom Missionsbericht ein."
         '
-        'ButtonLocations
+        'ButtonInsertLocations
         '
-        Me.ButtonLocations.Label = "Sabbatschule"
-        Me.ButtonLocations.Name = "ButtonLocations"
+        Me.ButtonInsertLocations.Label = "Sabbatschule"
+        Me.ButtonInsertLocations.Name = "ButtonInsertLocations"
         '
         'ButtonInsertEGW
         '
@@ -152,6 +146,12 @@
         '
         Me.ButtonInsertVideo.Label = "Missionsvideo"
         Me.ButtonInsertVideo.Name = "ButtonInsertVideo"
+        '
+        'ButtonInsertSongManually
+        '
+        Me.ButtonInsertSongManually.Label = "Manuell einfügen"
+        Me.ButtonInsertSongManually.Name = "ButtonInsertSongManually"
+        Me.ButtonInsertSongManually.ScreenTip = "Lied manuell einfügen"
         '
         'Ribbon
         '
@@ -175,12 +175,12 @@
     Friend WithEvents GroupSlides As Microsoft.Office.Tools.Ribbon.RibbonGroup
     Friend WithEvents ButtonInsertClosing As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonInsertMap As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents ButtonLocations As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents ButtonInsertLocations As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonInsertEGW As Microsoft.Office.Tools.Ribbon.RibbonButton
-    Friend WithEvents ButtonOpenDirectory As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents CheckBoxAnnounce As Microsoft.Office.Tools.Ribbon.RibbonCheckBox
     Friend WithEvents ButtonInsertVideo As Microsoft.Office.Tools.Ribbon.RibbonButton
     Friend WithEvents ButtonSetBackground As Microsoft.Office.Tools.Ribbon.RibbonButton
+    Friend WithEvents ButtonInsertSongManually As Microsoft.Office.Tools.Ribbon.RibbonButton
 End Class
 
 Partial Class ThisRibbonCollection

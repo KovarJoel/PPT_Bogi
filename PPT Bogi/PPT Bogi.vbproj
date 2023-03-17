@@ -200,8 +200,9 @@
   -->
   <ItemGroup>
     <AppDesigner Include="My Project\" />
-    <Compile Include="MyFunctions.vb" />
-    <Compile Include="MySongFunctions.vb" />
+    <Compile Include="MyFunctions\Files.vb" />
+    <Compile Include="MyFunctions\Songs.vb" />
+    <Compile Include="MyFunctions\Slides.vb" />
     <Compile Include="Ribbon.Designer.vb">
       <DependentUpon>Ribbon.vb</DependentUpon>
     </Compile>
@@ -215,6 +216,10 @@
       <DependentUpon>Ribbon.vb</DependentUpon>
     </EmbeddedResource>
     <None Include="PPT Bogi_TemporaryKey.pfx" />
+    <None Include="Resources\EGW.pptx" />
+    <None Include="Resources\Main.pptx" />
+    <None Include="Resources\Missionskarte.pptx" />
+    <None Include="Resources\Sabbatschulgruppen.pptx" />
     <None Include="ThisAddIn.Designer.xml">
       <DependentUpon>ThisAddIn.vb</DependentUpon>
     </None>
@@ -292,7 +297,7 @@
       <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
         <ProjectProperties HostName="PowerPoint" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="PowerPoint" Language="vb" TemplatesPath="" DebugInfoExeName="#Software\Microsoft\Office\16.0\PowerPoint\InstallRoot\Path#powerpnt.exe" AddItemTemplatesGuid="{DCFE8D25-4715-4C33-9EAB-A34A9EBC9544}" />
         <Host Name="PowerPoint" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
-          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" PublishedHash="A4CF9EC3BB364A5FFFA307D21A2C7130F2ED2642" />
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.vb" CanonicalName="AddIn" PublishedHash="A4CF9EC3BB364A5FFFA307D21A2C7130F2ED2642" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.vb" />
         </Host>
       </FlavorProperties>
     </VisualStudio>
