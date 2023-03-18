@@ -2,7 +2,9 @@
 
 Imports System.Collections
 Imports System.IO
+Imports System.Net
 Imports System.Net.Cache
+Imports System.Runtime.Remoting.Channels
 Imports Microsoft.Office.Core
 Imports Microsoft.Office.Interop.PowerPoint
 Imports Scripting
@@ -89,8 +91,11 @@ Partial Public Class MyFunctions
 
         Public Shared Sub LoadFileFromLink(URL As String, filePath As String)
 
-            'My.Computer.Network.DownloadFile(URL, filePath, "", "", True, 500, True)
-            My.Computer.Network.DownloadFile(URL, filePath)
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
+            My.Computer.Network.DownloadFile(URL, filePath, "", "", True, 500, True)
+
+
 
         End Sub
 
