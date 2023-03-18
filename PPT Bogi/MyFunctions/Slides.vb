@@ -5,6 +5,7 @@ Imports System.Windows.Forms
 Imports Microsoft.Office.Core
 Imports Microsoft.Office.Interop.PowerPoint
 
+
 Partial Public Class MyFunctions
 
     Public Class Slides
@@ -63,7 +64,7 @@ Partial Public Class MyFunctions
                 Dim destPPT As Presentation
                 Dim srcPPT As Presentation
 
-                pptApp = GetObject([Class]:="PowerPoint.Application")
+                pptApp = Globals.ThisAddIn.Application
 
                 destPPT = pptApp.ActivePresentation
                 srcPPT = pptApp.Presentations.Open(srcPath, MsoTriState.msoTrue,, MsoTriState.msoFalse)
@@ -148,6 +149,28 @@ Partial Public Class MyFunctions
                 End With
 
             End With
+
+        End Sub
+
+        Public Shared Sub InsertVideo(filePath As String)
+
+            Dim ppt As PowerPoint.Presentation
+            Dim current As PowerPoint.Slide
+            Dim slide As PowerPoint.Slide
+            Dim videoShape As PowerPoint.Shape
+
+            Dim width As Single
+            Dim height As Single
+
+            ppt = Globals.ThisAddIn.Application.ActivePresentation
+            current = ppt.Application.ActiveWindow.View.Slide
+            slide = ppt.Slides.AddSlide(current.SlideNumber + 1, ppt.SlideMaster.CustomLayouts.Item(1))
+
+            width = ppt.PageSetup.SlideWidth
+            height = ppt.PageSetup.SlideHeight
+
+            videoShape = slide.Shapes.AddMediaObject2(filePath, MsoTriState.msoFalse, MsoTriState.msoTrue, 0, 0, width, height)
+            videoShape.AnimationSettings.PlaySettings.PlayOnEntry = MsoTriState.msoTrue
 
         End Sub
 

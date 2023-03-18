@@ -98,10 +98,12 @@ Public Class Ribbon
 
     Private Sub ButtonInsertVideo_Click(sender As Object, e As RibbonControlEventArgs) Handles ButtonInsertVideo.Click
 
-        Dim link As String = "http://raw.githubusercontent.com/KovarJoel/PPT_Bogi/master/PPT%20Bogi/MyFunctions.vb"
-        Dim path As String = "C:\Users\joelm\Documents\PPT\temp.vb"
+        ' https://cloud.eud.adventist.org/index.php/s/i9nTwt55bHEmpLJ?path=%2F2023_1.%20Quartal
+        Dim link As String = "https://cloud.eud.adventist.org/index.php/s/ZiLmkiKZgN262Fq/download/01_Mehr%20Wohnungen%20auf%20dem%20Campus.mp4"
+        Dim path As String = "C:\Users\joelm\Documents\PPT\temp.mp4"
 
         MyFunctions.Files.LoadFileFromLink(link, path)
+        MyFunctions.Slides.InsertVideo(path)
 
     End Sub
 

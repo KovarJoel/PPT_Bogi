@@ -92,10 +92,7 @@ Partial Public Class MyFunctions
         Public Shared Sub LoadFileFromLink(URL As String, filePath As String)
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
-
             My.Computer.Network.DownloadFile(URL, filePath, "", "", True, 500, True)
-
-
 
         End Sub
 
