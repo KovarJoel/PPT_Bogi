@@ -100,7 +100,8 @@ Public Class Ribbon
 
         ' https://cloud.eud.adventist.org/index.php/s/i9nTwt55bHEmpLJ?path=%2F2023_1.%20Quartal
         Dim link As String = "https://cloud.eud.adventist.org/index.php/s/ZiLmkiKZgN262Fq/download/01_Mehr%20Wohnungen%20auf%20dem%20Campus.mp4"
-        Dim path As String = "C:\Users\joelm\Documents\PPT\temp.mp4"
+        Dim path As String = MyFunctions.tempDataPath & "video.mp4"
+
 
         MyFunctions.Files.LoadFileFromLink(link, path)
         MyFunctions.Slides.InsertVideo(path)

@@ -12,6 +12,7 @@ Imports Scripting
 Partial Public Class MyFunctions
 
     Public Shared appDataPath As String = Environ("AppData") & "\pptMacro\"
+    Public Shared tempDataPath As String = Environ("AppData") & "\pptMacro\" & "temp\"
 
     Public Class Files
         Public Shared Function DirectoryExists(ByVal DirectorySpec As String) As Boolean
@@ -92,6 +93,11 @@ Partial Public Class MyFunctions
         Public Shared Sub LoadFileFromLink(URL As String, filePath As String)
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
+
+            If DirectoryExists(tempDataPath) = False Then
+                MkDir(tempDataPath)
+            End If
+
             My.Computer.Network.DownloadFile(URL, filePath, "", "", True, 500, True)
 
         End Sub
