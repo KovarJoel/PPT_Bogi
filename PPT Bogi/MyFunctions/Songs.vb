@@ -184,6 +184,10 @@ Partial Public Class MyFunctions
 
                     If Regex.IsMatch(number, "^[0-9 ]+$") Then
 
+                        While number Like "0*"
+                            number = number.Substring(1)
+                        End While
+
                         Slides.InsertAnnouncement(number)
 
                     End If

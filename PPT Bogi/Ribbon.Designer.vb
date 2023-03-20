@@ -44,11 +44,11 @@
         Dim RibbonDialogLauncherImpl1 As Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher = Me.Factory.CreateRibbonDialogLauncher
         Me.TabBogi = Me.Factory.CreateRibbonTab
         Me.GroupSongs = Me.Factory.CreateRibbonGroup
+        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
+        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonInsertSong = Me.Factory.CreateRibbonButton
         Me.ButtonChangeDirectory = Me.Factory.CreateRibbonButton
         Me.ButtonInsertSongManually = Me.Factory.CreateRibbonButton
-        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
-        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonSetBackground = Me.Factory.CreateRibbonButton
         Me.ButtonInsertMap = Me.Factory.CreateRibbonButton
         Me.ButtonInsertLocations = Me.Factory.CreateRibbonButton
@@ -80,31 +80,6 @@
         Me.GroupSongs.Label = "Lieder"
         Me.GroupSongs.Name = "GroupSongs"
         '
-        'ButtonInsertSong
-        '
-        Me.ButtonInsertSong.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
-        Me.ButtonInsertSong.Image = Global.PPT_Bogi.My.Resources.Resources.Song
-        Me.ButtonInsertSong.Label = "Lied einfügen"
-        Me.ButtonInsertSong.Name = "ButtonInsertSong"
-        Me.ButtonInsertSong.ScreenTip = "Lied einfügen"
-        Me.ButtonInsertSong.ShowImage = True
-        Me.ButtonInsertSong.SuperTip = "Fügt ein Lied an der aktuellen Position ein."
-        '
-        'ButtonChangeDirectory
-        '
-        Me.ButtonChangeDirectory.Image = Global.PPT_Bogi.My.Resources.Resources.Folder
-        Me.ButtonChangeDirectory.Label = "Verzeichnis ändern"
-        Me.ButtonChangeDirectory.Name = "ButtonChangeDirectory"
-        Me.ButtonChangeDirectory.ScreenTip = "Verzeichnis ändern"
-        Me.ButtonChangeDirectory.ShowImage = True
-        Me.ButtonChangeDirectory.SuperTip = "Ändert das Verzeichnis, aus welchem die Lieder geöffnet werden sollen."
-        '
-        'ButtonInsertSongManually
-        '
-        Me.ButtonInsertSongManually.Label = "Manuell einfügen"
-        Me.ButtonInsertSongManually.Name = "ButtonInsertSongManually"
-        Me.ButtonInsertSongManually.ScreenTip = "Lied manuell einfügen"
-        '
         'CheckBoxAnnounce
         '
         Me.CheckBoxAnnounce.Label = "Ankündigung"
@@ -120,6 +95,29 @@
         Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
         Me.GroupSlides.Label = "Folien"
         Me.GroupSlides.Name = "GroupSlides"
+        '
+        'ButtonInsertSong
+        '
+        Me.ButtonInsertSong.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
+        Me.ButtonInsertSong.Image = Global.PPT_Bogi.My.Resources.Resources.Song
+        Me.ButtonInsertSong.Label = "Lied einfügen"
+        Me.ButtonInsertSong.Name = "ButtonInsertSong"
+        Me.ButtonInsertSong.ScreenTip = "Lied einfügen"
+        Me.ButtonInsertSong.ShowImage = True
+        Me.ButtonInsertSong.SuperTip = "Fügt ein Lied an der aktuellen Position ein."
+        '
+        'ButtonChangeDirectory
+        '
+        Me.ButtonChangeDirectory.Label = "Verzeichnis ändern"
+        Me.ButtonChangeDirectory.Name = "ButtonChangeDirectory"
+        Me.ButtonChangeDirectory.ScreenTip = "Verzeichnis ändern"
+        Me.ButtonChangeDirectory.SuperTip = "Ändert das Verzeichnis, aus welchem die Lieder geöffnet werden sollen."
+        '
+        'ButtonInsertSongManually
+        '
+        Me.ButtonInsertSongManually.Label = "Manuell einfügen"
+        Me.ButtonInsertSongManually.Name = "ButtonInsertSongManually"
+        Me.ButtonInsertSongManually.ScreenTip = "Lied manuell einfügen"
         '
         'ButtonSetBackground
         '
@@ -146,7 +144,7 @@
         '
         'ButtonInsertClosing
         '
-        Me.ButtonInsertClosing.Label = "Schlusslied"
+        Me.ButtonInsertClosing.Label = "Postludium"
         Me.ButtonInsertClosing.Name = "ButtonInsertClosing"
         '
         'ButtonInsertVideo

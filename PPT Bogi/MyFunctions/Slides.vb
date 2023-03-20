@@ -5,7 +5,6 @@ Imports System.Windows.Forms
 Imports Microsoft.Office.Core
 Imports Microsoft.Office.Interop.PowerPoint
 
-
 Partial Public Class MyFunctions
 
     Public Class Slides
@@ -96,8 +95,7 @@ Partial Public Class MyFunctions
             InsertSlides(path)
 
             Dim slide As Slide
-            Dim ogFont As PowerPoint.Font
-            Dim textbox As PowerPoint.Shape
+            Dim textBox As PowerPoint.Shape
 
             Dim width As Single
             Dim height As Single
@@ -107,48 +105,102 @@ Partial Public Class MyFunctions
             With Globals.ThisAddIn.Application
                 slide = .ActiveWindow.View.Slide
 
-                width = 200
-                height = 50
+                width = 300
+                height = 60
 
                 With .ActivePresentation.PageSetup
-                    x = .SlideWidth - width * 1.5
-                    y = height * 1
+                    x = .SlideWidth - width - 25
+                    y = height - 10
                 End With
             End With
 
-            textbox = slide.Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, x, y, width, height)
+            textBox = slide.Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, x, y, width, height)
 
-            With textbox.TextFrame.TextRange
+            With textBox.TextFrame.TextRange
+
+                Dim ogFont As PowerPoint.Font = Nothing
+
+                For Each tempShape As PowerPoint.Shape In slide.Shapes
+                    If tempShape.HasTextFrame Then
+                        If tempShape.TextFrame.HasText = MsoTriState.msoTrue Then
+                            If tempShape.TextFrame.TextRange.Text.Length > 0 Then
+                                ogFont = tempShape.TextFrame.TextRange.Lines(0, 1).Font
+                                Exit For
+                            End If
+                        End If
+                    End If
+                Next
 
                 .Text = songNumber
+                .Font.Bold = True
+                .Font.Italic = False
+                .Font.Size = 36
 
-                Dim tempShape As PowerPoint.Shape
-                Dim i As Integer = 1
-                For Each tempShape In slide.Shapes
+                If ogFont IsNot Nothing Then
+                    .Font.Color.RGB = ogFont.Color.RGB
+                Else
+                    .Font.Color.RGB = Color.Black.ToArgb
+                End If
 
-                    If tempShape.TextFrame.HasText = MsoTriState.msoTrue Then
-                        If tempShape.TextFrame.TextRange.Text.Length > 0 Then
+                .ParagraphFormat.Alignment = PpParagraphAlignment.ppAlignRight
+
+            End With
+
+        End Sub
+
+        Public Shared Sub InsertClosing()
+
+            Dim slide As PowerPoint.Slide
+            Dim textBox As PowerPoint.Shape
+            Dim ogFont As PowerPoint.Font = Nothing
+
+            Dim x, y, width, height As Single
+
+            InsertSlides(appDataPath & "Main.pptx")
+
+            slide = Globals.ThisAddIn.Application.ActiveWindow.View.Slide
+
+            With slide.Application.ActivePresentation.PageSetup
+
+                width = .SlideWidth * 0.9
+                height = 50
+                x = (.SlideWidth - width) / 2
+                y = height / 2
+
+            End With
+
+            textBox = slide.Shapes.AddTextbox(MsoTextOrientation.msoTextOrientationHorizontal, x, y, width, height)
+
+            textBox.TextFrame.TextRange.Text = "Es wird um andächtige Stille auch nach dem Ende des Gottesdienstes " _
+                & "gebeten. Herzlichen Dank und gesegneten Sabbat!"
+
+            For Each shape As PowerPoint.Shape In slide.Shapes
+                If shape.HasTextFrame Then
+                    If shape.TextFrame.HasText Then
+                        If shape.TextFrame.TextRange.Text.Length > 0 Then
+                            ogFont = shape.TextFrame.TextRange.Lines(0, 1).Font
                             Exit For
                         End If
                     End If
+                End If
+            Next
 
-                    i += 1
-                Next
+            With textBox.TextFrame.TextRange.Font
 
-                ogFont = slide.Shapes.Item(i).TextFrame.TextRange.Font
-                'MsgBox(slide.Shapes.Item(i).TextFrame.TextRange.Text)
-
-                With .Font
-
-                    .Size = ogFont.Size
-                    .Name = ogFont.Name
-                    .Italic = False
-                    .Bold = True
+                If ogFont IsNot Nothing Then
                     .Color.RGB = ogFont.Color.RGB
+                Else
+                    .Color.RGB = Color.Black.ToArgb()
+                End If
 
-                End With
+                .Bold = True
+                .Italic = False
+                .Shadow = True
+                .Size = 28
 
             End With
+
+            textBox.TextFrame.TextRange.ParagraphFormat.Alignment = PpParagraphAlignment.ppAlignCenter
 
         End Sub
 
@@ -161,6 +213,11 @@ Partial Public Class MyFunctions
 
             Dim width As Single
             Dim height As Single
+
+            If Not IO.File.Exists(filePath) Then
+                MsgBox("Datei konnte nicht geöffnet werden")
+                Exit Sub
+            End If
 
             ppt = Globals.ThisAddIn.Application.ActivePresentation
             current = ppt.Application.ActiveWindow.View.Slide

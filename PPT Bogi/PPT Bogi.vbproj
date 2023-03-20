@@ -39,8 +39,8 @@
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateInterval>7</UpdateInterval>
     <UpdateIntervalUnits>days</UpdateIntervalUnits>
-    <ProductName>PPT Bogi</ProductName>
-    <PublisherName />
+    <ProductName>PPT Bogi Add-In</ProductName>
+    <PublisherName>Joel Kovar</PublisherName>
     <SupportUrl />
     <FriendlyName>PPT Bogi</FriendlyName>
     <OfficeApplicationDescription />
