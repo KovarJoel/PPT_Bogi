@@ -98,7 +98,20 @@ Partial Public Class MyFunctions
                 MkDir(tempDataPath)
             End If
 
-            My.Computer.Network.DownloadFile(URL, filePath, "", "", True, 500, True)
+            Try
+                My.Computer.Network.DownloadFile(URL, filePath, "", "", True, 500, True)
+
+            Catch ex As Exception
+
+                MsgBox("Download fehlgeschlagen")
+
+                If IO.File.Exists(filePath) Then
+                    IO.File.Delete(filePath)
+                End If
+
+                Exit Sub
+
+            End Try
 
         End Sub
 
