@@ -1,7 +1,9 @@
 ﻿Imports System.Collections
 Imports System.Drawing
+Imports System.IO
 Imports System.Threading.Tasks
 Imports System.Windows.Forms
+Imports System.Windows.Forms.LinkLabel
 Imports Microsoft.Office.Core
 Imports Microsoft.Office.Interop.PowerPoint
 
@@ -204,7 +206,7 @@ Partial Public Class MyFunctions
 
         End Sub
 
-        Public Shared Sub InsertVideo(filePath As String)
+        Public Shared Sub InsertVideo()
 
             Dim ppt As PowerPoint.Presentation
             Dim current As PowerPoint.Slide
@@ -213,6 +215,15 @@ Partial Public Class MyFunctions
 
             Dim width As Single
             Dim height As Single
+
+            Dim URL As String
+            Dim filePath As String = tempDataPath & "video.mp4"
+
+            URL = InputBox("Downloadlink zu Video einfügen: ", "Missionsvideo")
+            If URL = Nothing Then
+                Exit Sub
+            End If
+            Files.LoadFileFromLink(URL, filePath)
 
             If Not IO.File.Exists(filePath) Then
                 MsgBox("Datei konnte nicht geöffnet werden")

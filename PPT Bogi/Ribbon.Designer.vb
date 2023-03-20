@@ -44,11 +44,11 @@
         Dim RibbonDialogLauncherImpl1 As Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher = Me.Factory.CreateRibbonDialogLauncher
         Me.TabBogi = Me.Factory.CreateRibbonTab
         Me.GroupSongs = Me.Factory.CreateRibbonGroup
-        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
-        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonInsertSong = Me.Factory.CreateRibbonButton
         Me.ButtonChangeDirectory = Me.Factory.CreateRibbonButton
         Me.ButtonInsertSongManually = Me.Factory.CreateRibbonButton
+        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
+        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonSetBackground = Me.Factory.CreateRibbonButton
         Me.ButtonInsertMap = Me.Factory.CreateRibbonButton
         Me.ButtonInsertLocations = Me.Factory.CreateRibbonButton
@@ -80,22 +80,6 @@
         Me.GroupSongs.Label = "Lieder"
         Me.GroupSongs.Name = "GroupSongs"
         '
-        'CheckBoxAnnounce
-        '
-        Me.CheckBoxAnnounce.Label = "Ankündigung"
-        Me.CheckBoxAnnounce.Name = "CheckBoxAnnounce"
-        '
-        'GroupSlides
-        '
-        Me.GroupSlides.Items.Add(Me.ButtonSetBackground)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertMap)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertLocations)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertEGW)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertClosing)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
-        Me.GroupSlides.Label = "Folien"
-        Me.GroupSlides.Name = "GroupSlides"
-        '
         'ButtonInsertSong
         '
         Me.ButtonInsertSong.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge
@@ -118,6 +102,22 @@
         Me.ButtonInsertSongManually.Label = "Manuell einfügen"
         Me.ButtonInsertSongManually.Name = "ButtonInsertSongManually"
         Me.ButtonInsertSongManually.ScreenTip = "Lied manuell einfügen"
+        '
+        'CheckBoxAnnounce
+        '
+        Me.CheckBoxAnnounce.Label = "Ankündigung"
+        Me.CheckBoxAnnounce.Name = "CheckBoxAnnounce"
+        '
+        'GroupSlides
+        '
+        Me.GroupSlides.Items.Add(Me.ButtonSetBackground)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertMap)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertLocations)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertEGW)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertClosing)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
+        Me.GroupSlides.Label = "Folien"
+        Me.GroupSlides.Name = "GroupSlides"
         '
         'ButtonSetBackground
         '
