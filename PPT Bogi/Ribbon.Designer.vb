@@ -41,14 +41,13 @@
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim RibbonDialogLauncherImpl1 As Microsoft.Office.Tools.Ribbon.RibbonDialogLauncher = Me.Factory.CreateRibbonDialogLauncher
         Me.TabBogi = Me.Factory.CreateRibbonTab
         Me.GroupSongs = Me.Factory.CreateRibbonGroup
-        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
-        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonInsertSong = Me.Factory.CreateRibbonButton
         Me.ButtonChangeDirectory = Me.Factory.CreateRibbonButton
         Me.ButtonInsertSongManually = Me.Factory.CreateRibbonButton
+        Me.CheckBoxAnnounce = Me.Factory.CreateRibbonCheckBox
+        Me.GroupSlides = Me.Factory.CreateRibbonGroup
         Me.ButtonSetBackground = Me.Factory.CreateRibbonButton
         Me.ButtonInsertMap = Me.Factory.CreateRibbonButton
         Me.ButtonInsertLocations = Me.Factory.CreateRibbonButton
@@ -70,34 +69,12 @@
         '
         'GroupSongs
         '
-        RibbonDialogLauncherImpl1.ScreenTip = "Hilfe"
-        RibbonDialogLauncherImpl1.SuperTip = "Bei Problemen oder Fragen."
-        Me.GroupSongs.DialogLauncher = RibbonDialogLauncherImpl1
         Me.GroupSongs.Items.Add(Me.ButtonInsertSong)
         Me.GroupSongs.Items.Add(Me.ButtonChangeDirectory)
         Me.GroupSongs.Items.Add(Me.ButtonInsertSongManually)
         Me.GroupSongs.Items.Add(Me.CheckBoxAnnounce)
         Me.GroupSongs.Label = "Lieder"
         Me.GroupSongs.Name = "GroupSongs"
-        '
-        'CheckBoxAnnounce
-        '
-        Me.CheckBoxAnnounce.Label = "Ankündigung"
-        Me.CheckBoxAnnounce.Name = "CheckBoxAnnounce"
-        Me.CheckBoxAnnounce.ScreenTip = "Ankündigung"
-        Me.CheckBoxAnnounce.SuperTip = "Wenn aktiviert, wird vor jedem eingefügten Lied automatisch eine Titelfolie mit L" &
-    "ied-Nummer erstellt."
-        '
-        'GroupSlides
-        '
-        Me.GroupSlides.Items.Add(Me.ButtonSetBackground)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertMap)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertLocations)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertEGW)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertClosing)
-        Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
-        Me.GroupSlides.Label = "Folien"
-        Me.GroupSlides.Name = "GroupSlides"
         '
         'ButtonInsertSong
         '
@@ -124,6 +101,25 @@
         Me.ButtonInsertSongManually.Name = "ButtonInsertSongManually"
         Me.ButtonInsertSongManually.ScreenTip = "Lied manuell einfügen"
         Me.ButtonInsertSongManually.SuperTip = "Lässt einen selber das aktuelle Verzeichnis von Liedern brwosen."
+        '
+        'CheckBoxAnnounce
+        '
+        Me.CheckBoxAnnounce.Label = "Ankündigung"
+        Me.CheckBoxAnnounce.Name = "CheckBoxAnnounce"
+        Me.CheckBoxAnnounce.ScreenTip = "Ankündigung"
+        Me.CheckBoxAnnounce.SuperTip = "Wenn aktiviert, wird vor jedem eingefügten Lied automatisch eine Titelfolie mit L" &
+    "ied-Nummer erstellt."
+        '
+        'GroupSlides
+        '
+        Me.GroupSlides.Items.Add(Me.ButtonSetBackground)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertMap)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertLocations)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertEGW)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertClosing)
+        Me.GroupSlides.Items.Add(Me.ButtonInsertVideo)
+        Me.GroupSlides.Label = "Folien"
+        Me.GroupSlides.Name = "GroupSlides"
         '
         'ButtonSetBackground
         '
@@ -165,7 +161,8 @@
         Me.ButtonInsertVideo.Label = "Missionsvideo"
         Me.ButtonInsertVideo.Name = "ButtonInsertVideo"
         Me.ButtonInsertVideo.ScreenTip = "Missionsvideo"
-        Me.ButtonInsertVideo.SuperTip = "Downloaded nach eingabe vom Link das Missionsvideo und fügt dieses ein."
+        Me.ButtonInsertVideo.SuperTip = "Downloaded nach Eingabe von Link oder Pfad das Missionsvideo und fügt dieses ein." &
+    ""
         '
         'Ribbon
         '

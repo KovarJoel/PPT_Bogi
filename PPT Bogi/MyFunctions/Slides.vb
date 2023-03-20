@@ -219,7 +219,7 @@ Partial Public Class MyFunctions
             Dim URL As String
             Dim filePath As String = tempDataPath & "video.mp4"
 
-            URL = InputBox("Downloadlink zu Video einfügen: ", "Missionsvideo")
+            URL = InputBox("Downloadlink oder Pfad zum Video einfügen: ", "Missionsvideo")
             If URL = Nothing Then
                 Exit Sub
             End If
