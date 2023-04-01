@@ -90,7 +90,7 @@ Partial Public Class MyFunctions
 
         End Sub
 
-        Public Shared Sub LoadFileFromLink(URL As String, filePath As String)
+        Public Shared Sub DownloadFileFromLink(URL As String, filePath As String)
 
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12
 

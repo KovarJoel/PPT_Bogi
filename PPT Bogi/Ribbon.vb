@@ -70,7 +70,9 @@ Public Class Ribbon
         ' https://cloud.eud.adventist.org/index.php/s/i9nTwt55bHEmpLJ?path=%2F2023_1.%20Quartal
         ' https://cloud.eud.adventist.org/index.php/s/ZiLmkiKZgN262Fq/download/01_Mehr%20Wohnungen%20auf%20dem%20Campus.mp4
 
-        MyFunctions.Slides.InsertVideo()
+        MyFunctions.Mission.GetLink()
+
+        'MyFunctions.Slides.InsertVideo()
 
     End Sub
 

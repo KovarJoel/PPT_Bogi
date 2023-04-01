@@ -223,7 +223,7 @@ Partial Public Class MyFunctions
             If URL = Nothing Then
                 Exit Sub
             End If
-            Files.LoadFileFromLink(URL, filePath)
+            Files.DownloadFileFromLink(URL, filePath)
 
             If Not IO.File.Exists(filePath) Then
                 MsgBox("Datei konnte nicht geöffnet werden")
